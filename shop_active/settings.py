@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-qc)iho^#__rvwczusaxg(qmak8g)utfotbbo$n^98!&d)s4-le
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['8000-gazerb-shop-active-aeckq9mqxz.us2.codeanyapp.com']
 
 
 # Application definition
