@@ -10,6 +10,10 @@ body {
     font-family: 'Comfortaa', cursive;
 }
 
+.shop-now-padding {
+    margin-top: 30px;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
