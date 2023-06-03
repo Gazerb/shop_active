@@ -47,6 +47,7 @@ def add_to_bag(request, item_id):
 def adjust_bag(request, item_id):
     """ Changes the quantity of the item in the bag """
 
+    product = Product.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))
     size = None
     if 'product_size' in request.POST:
@@ -56,18 +57,20 @@ def adjust_bag(request, item_id):
     if size:
         if quantity > 0:
             bag[item_id]['items_by_size'][size] = quantity
-            messages.success(request, f'Quantity of {quantity} updated!')
+            messages.success(request, f'{product.name} quantity updated to {quantity}!')
             
         else:
             del bag[item_id]['items_by_size'][size]
             if not bag[item_id]['items_by_size']:
                 bag.pop(item_id)
+                messages.success(request, f'Removed {product.name} from your bag')
                 
     else:
         if quantity > 0:
             bag[item_id] = quantity
         else:
-            bag.pop(item_id)     
+            bag.pop(item_id)
+            messages.success(request, f'Removed {product.name} from your bag')     
 
     request.session['bag'] = bag
     return redirect(reverse('view_bag'))
@@ -76,6 +79,7 @@ def adjust_bag(request, item_id):
 def remove_item(request, item_id):
     """ Removes item from bag """
     try:
+        product = Product.objects.get(pk=item_id)
         size = None
         if 'product_size' in request.POST:
             size = request.POST['product_size']
@@ -85,8 +89,10 @@ def remove_item(request, item_id):
             del bag[item_id]['items_by_size'][size]
             if not bag[item_id]['items_by_size']:
                 bag.pop(item_id)
+                messages.success(request, f'Removed {product.name} from your bag')
         else:
             bag.pop(item_id)
+            messages.success(request, f'Removed {product.name} from your bag')
 
         request.session['bag'] = bag
         return HttpResponse(status=200)
