@@ -189,26 +189,26 @@ input[name='q']::placeholder {
 
 /* Allauth form formatting */
 
-.allauth-form-inner-content p {
+.allauth-form-inner-block p {
     margin-top: 1.5rem; /* mt-4 */
     color: #6c757d; /* text-secondary */
 }
 
-.allauth-form-inner-content input {
+.allauth-form-inner-block input {
     border-color: #000;
     border-radius: 0;
 }
 
-.allauth-form-inner-content label:not([for='id_remember']) {
+.allauth-form-inner-block label:not([for='id_remember']) {
     display: none;
 }
 
-.allauth-form-inner-content input::placeholder {
+.allauth-form-inner-block input::placeholder {
     color: #aab7c4;
 }
 
-.allauth-form-inner-content button,
-.allauth-form-inner-content input[type='submit'] {
+.allauth-form-inner-block button,
+.allauth-form-inner-block input[type='submit'] {
 	/* btn */
 	display: inline-block;
     font-weight: 400;
@@ -230,14 +230,14 @@ input[name='q']::placeholder {
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-.allauth-form-inner-content button:hover,
-.allauth-form-inner-content input[type='submit']:hover {	
+.allauth-form-inner-block button:hover,
+.allauth-form-inner-block input[type='submit']:hover {	
 	color: #fff;
     background-color: #222;
     border-color: #222;
 }
 
-.allauth-form-inner-content a {
+.allauth-form-inner-block a {
 	color: #17a2b8; /* text-info */
 }
 
