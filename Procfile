@@ -1,1 +1,1 @@
-web: gunicorn SHOP_ACTIVE.wsgi:application 
+web: gunicorn shop_active.wsgi:application 
