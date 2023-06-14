@@ -15,7 +15,6 @@ import dj_database_url
 if os.path.exists("env.py"):
     import env
 
-
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -34,7 +33,7 @@ DEBUG = "DEVELOPMENT" in os.environ
 
 ALLOWED_HOSTS = [
     "shop-active.herokuapp.com",
-    "8000-gazerb-shop-active-s45o09gd5w.us2.codeanyapp.com",
+    "8000-gazerb-shop-active-6zdrpvixja.us2.codeanyapp.com",
 ]
 
 
