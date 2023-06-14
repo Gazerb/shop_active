@@ -11,11 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 import dj_database_url
-import environ
-
-# Initialise environment variables
-env = environ.Env()
-environ.Env.read_env()
 
 
 from pathlib import Path
@@ -33,7 +28,7 @@ SECRET_KEY = 'django-insecure-qc)iho^#__rvwczusaxg(qmak8g)utfotbbo$n^98!&d)s4-le
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['shop-active.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['shop-active.herokuapp.com', '8000-gazerb-shop-active-s45o09gd5w.us2.codeanyapp.com']
 
 
 # Application definition
