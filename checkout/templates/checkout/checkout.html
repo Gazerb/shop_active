@@ -57,6 +57,7 @@
                     <p class="my-0 small text-muted">£{{ item.product.price | calc_subtotal:item.quantity }}</p>
                 </div>
             </div>
+            {% endif %}
             {% endfor %}
             <hr class="my-0">
             <div class="row text-black text-right">
