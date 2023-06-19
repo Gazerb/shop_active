@@ -62,12 +62,31 @@ def product_detail(request, product_id):
     """A view to show individual product details"""
 
     product = get_object_or_404(Product, pk=product_id)
+    review_form = ProductReviewForm(data=request.POST or None)
 
+    reviews = Review.objects.filter(product=product).order_by('-create_date')
+    number_of_reviews = reviews.count()
+    average_rating_rounded = get_average_rating(reviews)
+    Product.objects.filter(id=product.id).update(
+        rating=average_rating_rounded)
+    reviews = setup_pagination(reviews, request, 2)
+
+    try:
+        favourites = get_object_or_404(Favourites, username=request.user.id)
+    except Http404:
+        is_product_in_favourites = False
+    else:
+        is_product_in_favourites = bool(product in favourites.products.all())
     context = {
-        "product": product,
+        'product': product,
+        'is_product_in_favourites': is_product_in_favourites,
+        'review_form': review_form,
+        'reviews': reviews,
+        'number_of_reviews': number_of_reviews,
+        'average_rating_rounded': average_rating_rounded
     }
 
-    return render(request, "products/product_detail.html", context)
+    return render(request, 'products/product_detail.html', context)
 
 
 @login_required
@@ -140,3 +159,72 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, "Product deleted!")
     return redirect(reverse("products"))
+
+
+@login_required
+def add_review(request, product_id):
+    """
+    A view to add a review to a product
+    Args:
+        request (object): HTTP request object.
+        product_id: Product id
+    Returns:
+        Render of product detail page with review context
+    """
+    product = get_object_or_404(Product, pk=product_id)
+    if request.method == 'POST':
+        review_form = ProductReviewForm(request.POST)
+
+        if review_form.is_valid():
+            already_reviewed = Review.objects.filter(product=product,
+                                                     user=request.user)
+            if not already_reviewed:
+                Review.objects.create(
+                        product=product,
+                        user=request.user,
+                        product_rating=request.POST['product_rating'],
+                        review_text=request.POST['review_text'],
+                )
+                reviews = Review.objects.filter(product=product)
+                average_rating_rounded = get_average_rating(reviews)
+                Product.objects.filter(id=product.id).update(
+                    rating=average_rating_rounded)
+                messages.info(request, 'Successfully added a review!')
+            else:
+                messages.error(request, 'You have already reviewed '
+                                        'this product!')
+            return redirect(reverse('product_detail', args=[product.id]))
+
+        messages.error(request, 'Failed to add product review')
+    messages.error(request, 'Invalid Method.')
+    return redirect(reverse('product_detail', args=[product.id]))
+
+
+@login_required
+def delete_review(request, product_id, review_user):
+    """
+    A view to delete a review to a product
+    Args:
+        request (object): HTTP request object.
+        product_id: Product id
+        review_user: Review user
+    Returns:
+        Render of product detail page with review deleted
+    """
+    product = get_object_or_404(Product, pk=product_id)
+    review = get_object_or_404(
+        Review, product=product, user__username=review_user)
+
+    if request.user != review.user and not request.user.is_superuser:
+        messages.error(request, "Sorry, you don't have permission to do that.")
+        return redirect(reverse('home'))
+    if request.method == 'POST':
+        review.delete()
+        reviews = Review.objects.filter(product=product)
+        average_rating_rounded = get_average_rating(reviews)
+        Product.objects.filter(id=product.id).update(
+            rating=average_rating_rounded)
+        messages.info(request, 'Your review was deleted')
+    else:
+        messages.error(request, 'Invalid request')
+    return redirect(reverse('product_detail', args=[product.id]))
