@@ -94,6 +94,25 @@
                             {% endif %}
                         </div>
                     </li>
+                    <!-- Favourites -->
+                    <li class="list-inline-item">
+                        <a class="{% if favourites_count %} font-weight-bold{% else %}text-black{% endif %} nav-link"
+                            href="{% url 'view_product_favourites' %}">
+                            <div class="text-center">
+                                {% if favourites_count %}
+                                <div><i class="fas fa-heart"></i></div>
+                                <p class="my-0">
+                                    Favourites ({{ favourites_count }})
+                                </p>
+                                {% else %}
+                                <div><i class="fas fa-heart"></i></div>
+                                <p class="my-0">
+                                    Favourites (0)
+                                </p>
+                                {% endif %}
+                            </div>
+                        </a>
+                    </li>
                     <li class="list-inline-item">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
                             href="{% url 'view_bag' %}">
@@ -156,61 +175,63 @@
     {% endblock %}
 
     <!-- Footer -->
-    <footer class="bg-light">
-        <div class="container pt-5 text-black">
-            <div class="row">
+    <footer class="bg-primary text-black">
+        <div class=" container pt-5 text-black bg-primary">
+            <div class="row bg-primary">
                 <!-- Logo and social media links -->
                 <div class="col-lg-4 col-md-12 mb-4 mb-lg-0"><a href="{% url 'home' %}" class="nav-link main-logo-link">
                         <h2 class="logo-font text-black my-0"><i class="fa-solid fa-heart-pulse"></i> Shop Active</h2>
                     </a>
-                    <p class="">Shop Active is an online shop selling gymwear, home gym equipment and gym accessories
+                    <p class="text-black text-center">Shop Active is an online shop selling gymwear, home gym equipment
+                        and gym accessories
                     </p>
                     <ul class="list-inline mt-4">
                         <li class="list-inline-item"><a href="https://www.twitter.com" target="_blank" rel="noreferrer"
                                 aria-label="Go to our twitter page (opens in new tab)" title="twitter"><i
-                                    class="dark-green fa fa-twitter"></i></a></li>
+                                    class="dark-green text-black fa fa-twitter"></i></a></li>
                         <li class="list-inline-item"><a href="https://www.facebook.com" target="_blank" rel="noreferrer"
                                 aria-label="Go to our facebook page (opens in new tab)" title="facebook"><i
-                                    class="dark-green fa fa-facebook"></i></a></li>
+                                    class="dark-green text-black fa fa-facebook"></i></a></li>
                         <li class="list-inline-item"><a href="https://www.instagram.com" target="_blank"
                                 rel="noreferrer" aria-label="Go to our instagram page (opens in new tab)"
-                                title="instagram"><i class="dark-green fa fa-instagram"></i></a></li>
+                                title="instagram"><i class="dark-green text-black fa fa-instagram"></i></a></li>
                         <li class="list-inline-item"><a href="https://www.pinterest.com" target="_blank"
                                 rel="noreferrer" aria-label="Go to our pinterest page (opens in new tab)"
-                                title="pinterest"><i class="dark-green fa fa-pinterest"></i></a></li>
+                                title="pinterest"><i class="dark-green text-black fa fa-pinterest"></i></a></li>
                         <li class="list-inline-item"><a href="https://www.snapchat.com" target="_blank" rel="noreferrer"
                                 aria-label="Go to our snapchat page (opens in new tab)" title="snapchat"><i
-                                    class="dark-green fa fa-snapchat"></i></a></li>
+                                    class="dark-green text-black fa fa-snapchat"></i></a></li>
                     </ul>
                 </div>
-                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0 bg-primary">
                     <h2 class="text-uppercase font-weight-bold mb-4 footer-text">Products</h2>
                     <ul class="list-unstyled mb-0">
                         <li class="mb-2"><a href="{% url 'products' %}?category=mens,womens"
-                                class="font-black">Gymwear</a></li>
+                                class="text-black">Gymwear</a>
+                        </li>
                         <li class="mb-2"><a href="{% url 'products' %}?category=machines,weights,home_gym_accessories"
-                                class="font-black">Home Gym</a></li>
+                                class="text-black">Home Gym</a></li>
                         <li class="mb-2"><a href="{% url 'products' %}?category=gym_accessories"
-                                class="font-black">Accessories</a></li>
+                                class="text-black">Accessories</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-2 col-md-6 col-xs-6 mb-4 mb-lg-0">
+                <div class="col-lg-2 col-md-6 col-xs-6 mb-4 mb-lg-0 bg-primary text-black">
                     <h2 class="text-uppercase font-weight-bold mb-4 footer-text">Website</h2>
                     <ul class="list-unstyled mb-0">
                         {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
-                        <li class="mb-2"><a href="{% url 'add_product' %}" class="font-black">Product Management</a>
+                        <li class="mb-2"><a href="{% url 'add_product' %}" class="text-black">Product Management</a>
                         </li>
-                        <li class="mb-2"><a href="" class="font-black">News Item Management</a>
+                        <li class="mb-2"><a href="" class="text-black">News Item Management</a>
                         </li>
                         {% else %}
                         <li class="mb-2"><a href="{% url 'profile' %}" class="font-black">My Profile</a></li>
-                        <li class="mb-2"><a href="" class="font-black">News</a></li>
-                        <li class="mb-2"><a href="" class="font-black">Sale</a></li>
+                        <li class="mb-2"><a href="" class="text-black">News</a></li>
+                        <li class="mb-2"><a href="" class="text-black">Sale</a></li>
                         {% endif %}
                         {% else %}
-                        <li class="mb-2"><a href="{% url 'account_signup' %}" class="font-black">Register</a></li>
-                        <li class="mb-2"><a href="{% url 'account_login' %}" class="font-black">Login</a></li>
+                        <li class="mb-2"><a href="{% url 'account_signup' %}" class="text-black">Register</a></li>
+                        <li class="mb-2"><a href="{% url 'account_login' %}" class="text-black">Login</a></li>
                         {% endif %}
                     </ul>
                 </div>
@@ -227,7 +248,7 @@
                                     class="form-control border-0 shadow-0">
                                 <div class="input-group-append">
                                     <button id="newsletter" type="submit" value="newsletter"
-                                        class="btn btn-link green-btn">Signup</button>
+                                        class="btn btn-link text-black">Signup</button>
                                 </div>
                             </div>
                         </form>
@@ -236,9 +257,9 @@
             </div>
         </div>
         <!-- Copyright information -->
-        <div class="bg-light py-1">
+        <div class="bg-primary py-1">
             <div class="container text-center">
-                <p class="mb-0 py-2 footer-font">© 2023 All rights reserved.</p>
+                <p class="mb-0 py-2 footer-font text-black">© 2023 All rights reserved.</p>
             </div>
         </div>
     </footer>
