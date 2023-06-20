@@ -3,13 +3,17 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django import forms
+from django.http import Http404
 
-from .models import Product, Category
-from .forms import ProductForm
+from util.util import setup_pagination
+from .models import Product, Category, Review
+from .forms import ProductForm, ProductReviewForm
+from favourites.models import Favourites
 
 
 def all_products(request):
-    """A view to show all products, including sorting and search queries"""
+    """ A view to show all products, including sorting and search queries """
 
     products = Product.objects.all()
     query = None
@@ -18,49 +22,56 @@ def all_products(request):
     direction = None
 
     if request.GET:
-        if "sort" in request.GET:
-            sortkey = request.GET["sort"]
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
             sort = sortkey
-            if sortkey == "name":
-                sortkey = "lower_name"
-                products = products.annotate(lower_name=Lower("name"))
-            if sortkey == "category":
-                sortkey = "category__name"
-            if "direction" in request.GET:
-                direction = request.GET["direction"]
-                if direction == "desc":
-                    sortkey = f"-{sortkey}"
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                products = products.annotate(lower_name=Lower('name'))
+            if sortkey == 'category':
+                sortkey = 'category__name'
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
 
-        if "category" in request.GET:
-            categories = request.GET["category"].split(",")
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
-        if "q" in request.GET:
-            query = request.GET["q"]
+        if 'q' in request.GET:
+            query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
-                return redirect(reverse("products"))
+                messages.error(request,
+                               ("You didn't enter any search criteria!"))
+                return redirect(reverse('products'))
 
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
-    current_sorting = f"{sort}_{direction}"
+    current_sorting = f'{sort}_{direction}'
 
     context = {
-        "products": products,
-        "search_term": query,
-        "current_categories": categories,
-        "current_sorting": current_sorting,
+        'products': products,
+        'search_term': query,
+        'current_categories': categories,
+        'current_sorting': current_sorting,
     }
 
-    return render(request, "products/products.html", context)
+    return render(request, 'products/products.html', context)
 
 
 def product_detail(request, product_id):
-    """A view to show individual product details"""
-
+    """
+    A view to show individual product details
+    Args:
+        request (object): HTTP request object.
+        product_id: Product id
+    Returns:
+        Render of product detail page with context
+    """
     product = get_object_or_404(Product, pk=product_id)
     review_form = ProductReviewForm(data=request.POST or None)
 
@@ -87,6 +98,29 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
+
+def get_average_rating(reviews):
+    """
+    Calculate average rating based on a number of reviews
+    Args:
+        reviews: Reviews object
+    Returns:
+        Average rating rounded to one decimal place
+    """
+    number_of_reviews = 0
+    sum_of_ratings = 0
+    average_rating_rounded = 0
+    for review in reviews:
+        number_of_reviews = number_of_reviews + 1
+        sum_of_ratings = sum_of_ratings + review.product_rating
+
+    if number_of_reviews > 0:
+        average_rating = (sum_of_ratings / number_of_reviews)
+        average_rating_rounded = round(average_rating, 1)
+        return average_rating_rounded
+    else:
+        return average_rating_rounded
 
 
 @login_required

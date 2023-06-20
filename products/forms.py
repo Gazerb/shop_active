@@ -1,6 +1,7 @@
 from django import forms
+from django.forms import Textarea
 from .widgets import CustomClearableFileInput
-from .models import Product, Category
+from .models import Product, Category, Review
 
 
 class ProductForm(forms.ModelForm):
