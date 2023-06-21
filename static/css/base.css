@@ -1,5 +1,7 @@
 html {
     height: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -8,6 +10,8 @@ body {
     height: calc(100vh -64px);
     color: blue;
     font-family: 'Comfortaa', cursive;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .shop-now-padding {
@@ -44,8 +48,8 @@ body {
 }
 
 .footer {
-    width: 100%;
-    position: absolute;
+    padding: 0%;
+    margin: 0%;
 }
 
 .green-btn {
