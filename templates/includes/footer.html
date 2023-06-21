@@ -80,13 +80,13 @@
 
           <ul class="list-unstyled mb-0">
             <li>
-              <a href="#!" class="text-black">Mens</a>
+              <a href="{% url 'products' %}?category=mens" class="text-black">Mens</a>
             </li>
             <li>
-              <a href="#!" class="text-black">Womens</a>
+              <a href="{% url 'products' %}?category=womens" class="text-black">Womens</a>
             </li>
             <li>
-              <a href="#!" class="text-black">All Clothing</a>
+              <a href="{% url 'products' %}?category=mens,womens" class="text-black">All Clothing</a>
             </li>
           </ul>
         </div>
@@ -98,16 +98,16 @@
 
           <ul class="list-unstyled mb-0">
             <li>
-              <a href="#!" class="text-black">Machines</a>
+              <a href="{% url 'products' %}?category=machines" class="text-black">Machines</a>
             </li>
             <li>
-              <a href="#!" class="text-black">Weights</a>
+              <a href="{% url 'products' %}?category=weights" class="text-black">Weights</a>
             </li>
             <li>
-              <a href="#!" class="text-black">Accessories</a>
+              <a href="{% url 'products' %}?category=home_gym_accessories" class="text-black">Accessories</a>
             </li>
             <li>
-              <a href="#!" class="text-black">All Home Gym</a>
+              <a href="{% url 'products' %}?category=machines,weights,home_gym_accessories" class="text-black">All Home Gym</a>
             </li>
           </ul>
         </div>
@@ -119,10 +119,10 @@
 
           <ul class="list-unstyled mb-0">
             <li>
-              <a href="#!" class="text-black">Bags</a>
+              <a href="{% url 'products' %}?category=bags" class="text-black">Bags</a>
             </li>
             <li>
-              <a href="#!" class="text-black">All Accessories</a>
+              <a href="{% url 'products' %}?category=gym_accessories" class="text-black">All Accessories</a>
             </li>
           </ul>
         </div>
@@ -136,25 +136,22 @@
             {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
             <li>
-              <a href="#!" class="text-black">Product Management</a>
+              <a href="{% url 'add_product' %}" class="text-black">Product Management</a>
             </li>
             <li>
-              <a href="#!" class="text-black">My Profile</a>
+              <a href="{% url 'profile' %}" class="text-black">My Profile</a>
             </li>
             {% else %}
             <li>
-              <a href="#!" class="text-black">My Profile</a>
-            </li>
-            <li>
-              <a href="#!" class="text-black">Sale</a>
+              <a href="{% url 'profile' %}" class="text-black">My Profile</a>
             </li>
             {% endif %}
             {% else %}
             <li>
-                <a href="" class="text-black">Register</a>
+                <a href="{% url 'account_signup' %}" class="text-black">Register</a>
             </li>
             <li>
-                <a href="" class="text-black">Login</a>
+                <a href="{% url 'account_login' %}" class="text-black">Login</a>
             </li>
             {% endif %}
           </ul>
