@@ -1,108 +1,317 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Shop Active
 
-Welcome Gazerb,
+## Code institute / City of Bristol College Milestone Project 4
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
 
-## Gitpod Reminders
+Click <a href="https://clitheroe-coach-mentor.herokuapp.com/">here</a> to view the live website.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## User Experince 
+In this section, I will be providing information on the UX process. Focusing on who the PeakMotion website is for, the main aims of this project and how the website helps to meet the users needs
 
-`python3 -m http.server`
+The Project Goals:
+<ul>
+    <li>Allow users to register an account</li>
+    <li>Enable users to make a booking </li>
+    <li>Alow users the ability to change a booking created</li>
+    <li>Provide information and the current club mentors</li>
+</ul>
 
-A blue button should appear to click: _Make Public_,
+## User stories
 
-Another blue button should appear to click: _Open Browser_.
+A new user:
+<ul>
+    <li>Easy to sign up</li>
+    <li>Easy to make a booking</li>
+    <li>Easy to change a booking made</li>
+</ul>
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+#### Returning users
 
-A blue button should appear to click: _Make Public_,
+Current user:
+<ul>
+    <li>Easy to make a booking</li>
+    <li>Easy to change a booking made</li>
+</ul>
 
-Another blue button should appear to click: _Open Browser_.
+Buisness Owner:
+<ul>
+    <li>Give users the ability to make bookings with the coach mentors</li>
+    <li>Show users contact details for the club and coach mentors</li>
+    <li>Provide other learning resources</li>
+</ul>
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
 
-To log into the Heroku toolbelt CLI:
+## User Centered Design
+### 1. Strategy Plane
+The User Centered Design process started with the creation of the user stories and these influenced the design and layout of the product.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### 2. Scope Plane
+A system so the club can allow its new coaches to book time with one of the experienced coach metors to help them with any issues or just to improve them as coaches.
 
-------
 
-## Release History
+### 3. Structure Plane
+After idenifying the needs of the business owner and users that will use the new system the below was identified as required:
+<ul>
+    <li>Blue and White colour scheme to match the clubs current colours</li>
+    <li>Club contact details/li>
+    <li>Current club mentors</li>
+    <li>Booking form</li>
+    <li>User bookings page</li>
+    <li>Clear layout</li>
+    <li>easy navigation for the user</li>
+</ul>
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+### 4. Skeleton Page
+To create the wireframes for the product I used <a href="https://www.figma.com/>">Figma</a>. They were created to appear as they would on a desktop, table and mobile.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+We have a header containing the logo and nav bar.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+To help the website with responsiveness of devices it was decided that when viewed on a mobile that the nav bar would be in a drop down hamberger menu.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+A footer is also included which contains the contact details of the club and links to other resources.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+#### Wireframes
+Desktop:
+<ul>
+    <li><a href="documentation/wireframe/Desktop-Home-page.png">Index Page</a></li>
+    <li><a href="documentation/wireframe/Desktop-Log-In.png">Log In Page</a></li>
+    <li><a href="documentation/wireframe/Desktop-Make-a-Booking.png">Make a Booking Page</a></li>
+    <li><a href="documentation/wireframe/Desktop-Mentors.png">Mentors Page</a></li>
+    <li><a href="documentation/wireframe/Desktop-User-bookings.png">User Bookings page</a></li>
+    <li><a href="documentation/wireframe/Desktop-User-Profile.png">User Profile Page</a></li>
+</ul>
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+Tablet:
+<ul>
+    <li><a href="documentation/wireframe/Tablet-Home-Page.png">Index Page</a></li>
+    <li><a href="documentation/wireframe/Tablet-Log-In-page.png">Log In Page</a></li>
+    <li><a href="documentation/wireframe/Tablet-Make-a-Booking.png">Make a Booking Page</a></li>
+    <li><a href="documentation/wireframe/Tablet-Mentors.png">Mentors Page</a></li>
+    <li><a href="documentation/wireframe/Tablet-Profile.png">User Profile Page</a></li>
+    <li><a href="documentation/wireframe/Tablet-user-bookings-page.png">User Bookings Page</a></li>
+</ul>
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+Mobile:
+<ul>
+    <li><a href="documentation/wireframe/Phone-home.png">Index Page</a></li>
+    <li><a href="documentation/wireframe/Phone-log-In.png">Log In Page</a></li>
+    <li><a href="documentation/wireframe/Phone-Make-a-Booking.png">Make a Booking Page</a></li>
+    <li><a href="documentation/wireframe/Phone-mentors-page.png">Mentors Page</a></li>
+    <li><a href="documentation/wireframe/Phone-User-bookings-Page.png">User Bookings Page</a></li>
+    <li><a href="documentation/wireframe/Phone-User-Profile-Page.png">User Profile Page</a></li>
+</ul>
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### 5. Surface Plane
+#### Design
+Due to the modern society of users now looking for information on mobile phones and tablet this was created with a mobile-first approach.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+#### Colour Scheme
+The colour scheme was chosen to be simple, clean, bright and visually appealing. Blue is the chosen as this is the primary colour of the club. There will be slight variations of the blue throught the system. Some ares will also contain white as this is the second colour of the clubs main two colours.
+<img src="documentation/readme-images/colour.png" height="auto" width="100%" alt="Image of colour palette showing colours used in website" />
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+<sub>*Colour palette created at* [coolors.co](https://coolors.co/7ae9f0-04c6d3-fafafa-0420d4-000000).</sub>
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+<ul>
+    <li>#1565C0. Chosen for the navigation bar and footer</li>
+    <li>#0D47A1. A darker shade of blue chosen for the copyright area of the footer.</li>
+    <li>#E3F2FD. Chosen as the background for the form areas</li>
+    <li>#2196F3. Chosen as the background for list of bookings</li>
+    <li>Green was chosen for the edit buttons</li>
+    <li>Red was chosen for the delete/ cancel buttons</li>
+</ul>
 
-------
+#### Icons
+Icons were used alongside to help the user understand sections of the website at a glance. I have taken the icons used in this project from Font Awesome (https://fontawesome.com/).
 
-## FAQ about the uptime script
+## Development
+I was advised by my mentor to change the buttons to have one on each side of the page cards rather then right next to each other to improve UX. I was also advised to add icons to the buttons to improve the clearness of the website and buttons.
 
-**Why have you added this script?**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+## Features
+### Consistent features on all pages
+<ul>
+    <li>Header, contains the same company logo and navigation bar</li>
+    <li>Footer, Contains company contact number, email and social links</li>
+</ul>
 
-**How will this affect me?**
+### Other features
+<ul>
+    <li>Ability for the user to create an account</li>
+    <li>User can log in and out of their account</li>
+    <li>User can make, edit and cancel bookings</li>
+    <li>User can also delete their account</li>
+</ul>
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+## Future Features
+<ul>
+    <li>Allow the mentors to set availabilty that can be booked</li>
+    <li>Add an area where managers can share sessions and other resources</li>
+    <li>Add feature so once booking is made then the mentors get an email of this booking with contact details</li>
+    <li>Reviews area for the coaches to review their mentors</li>
+    <li>User to receive email confirming booking</li>
+    <li>Hero image of a coaching session being delivered added to the index page</li>
+</ul>
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+## Technologies used
+The below languages were used in this project:
+<ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript - Imported from Materialize script</li>
+    <li>Python</li>
+    <li>JQuery - imported from Materialize script</li>
+    <li>MongoDB</li>
+    <li>Flask</li>
+    <li>Jinja</li>
+</ul>
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+## websites used
+<ul>
+    <li>Am I Responsive (http://ami.responsivedesign.is/). This was used to create the mock up image at the top of this readme document</li>
+    <li>Code Institute (https://codeinstitute.net/). Modules and walk-through projects have been used and copied in this project</li>
+    <li>Coolors (https://coolors.co/7ae9f0-04c6d3-fafafa-0420d4-000000). Used to create website colour scheme and palette</li>
+    <li>Font Awesome (https://fontawesome.com/). Used for icons within website</li>
+    <li>Chrome Developer tools. Used to test website for buys and responsiveness</li>
+    <li>Google Fonts. Used to incorporate fonts in website</li>
+    <li>Github. Used for site respository</li>
+    <li>Gitpod. Online developer tool used to build and develop this project</li>
+    <li>Heroku. To deploy finished website</li>
+    <li>W3C CSS Validation. Used to validate projects CSS code</li>
+    <li>W3C HTML Validation. Used ti validate projects html pages / code</li>
+    <li>Figma. Used to create websites wireframes</li>
+</ul>
 
-**So….?**
+## Performance Testing
+### Lighthouse testing
+I used the chrome extension 'Lighthouse' to test the performance of the website. Below is the capture of my report.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+<img src="documentation/readme-images/lighthouse.png" height="auto" width="100%" alt="First Lighthouse Report." />
 
-**Can I opt out?**
+### W3C HTML Validator
+All pages checked and no errors found within the HTML.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
 
+### W3C CSS Validator
+No error where found in the CSS code when that went through the validator.
+
+
+## Manual Testing
+The website was tested on the following browsers:
+<ul>
+    <li>Google Chrome - Version 106.0.5249.91</li>
+    <li>Safari on iPhone</li>
+    <li>Opera - Version 90.0.4480.80</li>
+    <li>Microsoft Edge - Version 105.0.1343.53</li>
+    <li>Firefox - Version 105.01</li>
+</ul>
+
+All browsers where tested fully and the website behaved as expected on them. I tested:
+
+<ul>
+    <li>That the user can log in and out</li>
+    <li>That if the wrong password is entered the user is told and can try again</li>
+    <li>That the user can register</li>
+    <li>That the user can added, edit and cancel bookings</li>
+    <li>That the user can delete their account</li>
+    <li>That the user can edit their profile</li>
+</ul>
+
+## Device & responsiveness testing
+The below devices where tested to see how the website behaved on them and their responsiveness using Google Developer Chrome tools.
+
+<ul>
+    <li>iPhone SE</li>
+    <li>iPhone Xr</li>
+    <li>iPhone12 Pro</li>
+    <li>Pixel 5</li>
+    <li>Samsung S20 Ultra</li>
+    <li>iPad Air</li>
+    <li>iPad Mini</li>
+    <li>Surface Pro 7</li>
+</ul>
+
+It was also tested on the below laptop and desktop sizes:
+
+<ul>
+    <li>15" Laptop (1024 x 800)</li>
+    <li>22" Desktop (1680 x 1050)</li>
+    <li>24" Desktop (1920 x 1200)</li>
+</ul>
+
+### Tested User Stories
+Below I will discuss how the project met the requirements of the user stories from earlier.
+
+#### New User
+So for a new user of this booking system they needed to be able to complete below:
+<ul>
+    <li>sign up</li>
+    <li>make a booking</li>
+    <li>change a booking made</li>
+</ul>
+
+After testing this is proven to work for the new user.
+
+<img src="documentation/readme-images/new-user-1.png" height="auto" width="100%" alt="image showing nav bar pages where the new user requirements can be met" />
+<img src="documentation/readme-images/new-user-2.png" height="auto" width="100%" alt="image showing nav bar pages where the new user requirements can be met" />
+
+
+The above also met the requirements of a current/ returning user:
+<ul>
+    <li>Make a booking</li>
+    <li>Change a booking made</li>
+    <li>Cancel a booking</li>
+</ul>
+
+
+We have also met the buisness owners requirement of:
+Buisness Owner:
+<ul>
+    <li>Give users the ability to make bookings with the coach mentors</li>
+    <li>Show users contact details for the club and coach mentors</li>
+    <li>Provide other learning resources</li>
+</ul>
+
+We already know from testing that users can make bookings with mentors. To meet the other requirement each booking the user makes they have to enter their contact details and the reason for their booking to assist them mentors. We have also provided other learning resouces on the links in the footer on every page.
+
+<img src="documentation/readme-images/buisness-1.png" height="auto" width="100%" alt="image showing booking form" />
+<img src="documentation/readme-images/buisness-2.png" height="auto" width="100%" alt="image showing other resouce links" />
+
+## Bugs
+I had a few bugs with this project throughout. The first was that my website would not connect to my Mongdb, this was due to an incorrect path to the mongodb.
+
+Second was issues with showing users current bookings. This was resolved by inputting the correct code on all pages it was required and calling the booking ID when the show bookings page loaded.
+
+
+Third, I was having issues where when the account was deleted the user still had a session. This was resolved by added in session pop in the app.py.
+
+
+### Deployment to Heroku
+
+1. Log in to your Heroku account and create a new App.
+2. Set the environment variables in Settings > Reveal Config Variables
+3. The following Variables must be set 
 ```
-pkill uptime.sh
-rm .vscode/uptime.sh
+MONGO_URI = mongodb+srv://<INSERT USERNAME>:<INSERT PASSWORD>@<INSERT CLUSTERNAME>.zbpbq.mongodb.net/<INSERT COLLECTION NAME>?retryWrites=true&w=majority
+MONGO_DBNAME = <INSERT YOUR COLLECTION NAME>
+SECRET_KEY = <INSERT YOUR SECRET KEY>
+IP = 0.0.0.0
+PORT = 5000
 ```
+4. Create requirements.txt from your project with the help of ```pip3 freeze --local > requirements.txt ```
+5. Create a Procfile ```echo web: python app.py > Procfile``` 
+6. Commit changes to Git ```git add . ``` followed by ```git commit -m ""```
+7. Log in to heroku from your terminal ```heroku login```
+8. Add exisitng repository to Heroku ```heroku git:remote -a <your repository>```
+9. Push changes to Heroku ```git push heroku master```
 
-**Anything more?**
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+## Credits
+In this project of lot of my early code was used with the help of the Code institute Flask taskmanager app walkthrough. I then added code to suite this project.
 
----
-
-Happy coding!
+I have also used materialize throught the project for the nav bar and mobile nav bar, layout, colours, forms and buttons.
