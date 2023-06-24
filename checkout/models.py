@@ -104,7 +104,7 @@ class OrderLineItem(models.Model):
         on_delete=models.CASCADE
     )
     product_size = models.CharField(
-        max_length=2,
+        max_length=10,
         null=True,
         blank=True
     )
