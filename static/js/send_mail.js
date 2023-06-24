@@ -1,3 +1,4 @@
+// JavaScript to send mail using JS Mail
 function sendMail(contactForm) {
     emailjs.init("EMAILJS_PUBLIC_KEY");
     emailjs.send("gmail", "shop_active", {
