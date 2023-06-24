@@ -1,3 +1,4 @@
+# External Imports
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -6,6 +7,7 @@ from django.db.models.functions import Lower
 from django import forms
 from django.http import Http404
 
+# Internal Imports
 from util.util import setup_pagination
 from .models import Product, Category, Review
 from .forms import ProductForm, ProductReviewForm
@@ -138,7 +140,8 @@ def add_product(request):
             return redirect(reverse("product_detail", args=[product.id]))
         else:
             messages.error(
-                request, "Failed to add product. Please ensure the form is valid."
+                request,
+                "Failed to add product. Please ensure the form is valid."
             )
     else:
         form = ProductForm()
@@ -167,7 +170,8 @@ def edit_product(request, product_id):
             return redirect(reverse("product_detail", args=[product.id]))
         else:
             messages.error(
-                request, "Failed to update product. Please ensure the form is valid."
+                request,
+                "Failed to update product. Please ensure the form is valid."
             )
     else:
         form = ProductForm(instance=product)

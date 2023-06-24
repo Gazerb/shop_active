@@ -1,4 +1,7 @@
+# External Imports
 from django.contrib import admin
+
+# Internal Imports
 from .models import Product, Category
 
 

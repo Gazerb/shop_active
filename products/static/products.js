@@ -1,6 +1,8 @@
+// Below is the javascript for the back to top button
 $('.btt-link').click(function (e) {
     window.scrollTo(0, 0);
 });
+// Below is the cord for the sort selecter that sorts the products on the page
 $('#sort-selector').change(function () {
     var selector = $(this);
     var currentUrl = new URL(window.location);
@@ -17,6 +19,7 @@ $('#sort-selector').change(function () {
         window.location.replace(currentUrl);
     }
 });
+// Changes impages to product being added
 $('#new-image').change(function () {
     var file = $('#new-image')[0].files[0];
     $('#filename').text(`Image will be set to: ${file.name}`);
