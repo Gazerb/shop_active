@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load bag_tools %}
-
+<!-- Page Header -->
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -35,16 +35,18 @@
                                 <th scope="col">Subtotal</th>
                             </tr>
                         </thead>
-
+                        <!-- for loop for bag items -->
                         {% for item in bag_items %}
                             <tr>
                                 <td class="p-3 w-25">
+                                <!-- if statement for product image, if the product does have one it displays noimage.png-->
                                     {% if item.product.image %}
                                     <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                                     {% else %}
                                     <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
                                     {% endif %}
                                 </td>
+                                <!-- Shows item name and sizes that can be selected. Also has item quantity and price. -->
                                 <td class="py-3">
                                     <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                                     <p class="my-0"><strong>Size: </strong>{% if item.product.has_sizes %}{{ item.size }}{% else %}N/A{% endif %}</p>
@@ -56,8 +58,10 @@
                                 </td>
                                 <td class="py-3 w-25">
                                     <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
+                                    <!-- Django cross-site fraud protection which is required for the form to be submitted -->
                                         {% csrf_token %}
                                         <div class="form-group">
+                                        <!-- Bag form so users can update items in bag -->
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <button class="decrement-qty btn btn-sm btn-black rounded-0" 
@@ -95,6 +99,7 @@
                             </tr>
                         {% endfor %}
                         <tr>
+                            <!-- Shows order totals -->
                             <td colspan="5" class="pt-5 text-right">
                                 <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
                                 <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
@@ -107,6 +112,7 @@
                             </td>
                         </tr>
                         <tr>
+                        <!-- Link to keep shopping -->
                             <td colspan="5" class="text-right">
                                 <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
                                     <span class="icon">
@@ -114,6 +120,7 @@
                                     </span>
                                     <span class="text-uppercase">Keep Shopping</span>
                                 </a>
+                            <!-- Link to continue to secure checkout -->
                                 <a href="{% url 'checkout' %}" class="btn btn-primary rounded-0 btn-lg">
                                     <span class="text-uppercase">Secure Checkout</span>
                                     <span class="icon">
@@ -139,11 +146,12 @@
 <hr>
 {% endblock %}
 
+<!-- Imports required scripts for this page -->
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
 
-
+<!-- Script below if for the update and removed of items -->
 <script type="text/javascript">
     // Update quantity on click
     $('.update-link').click(function(e) {
