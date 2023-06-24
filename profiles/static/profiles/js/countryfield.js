@@ -1,3 +1,4 @@
+// JS code for the country field for address on forms
 let countrySelected = $('#id_default_country').val();
 if(!countrySelected) {
     $('#id_default_country').css('color', '#aab7c4');
