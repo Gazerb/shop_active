@@ -1,3 +1,4 @@
+#External Imports
 import uuid
 
 from django.db import models
@@ -6,6 +7,7 @@ from django.conf import settings
 
 from django_countries.fields import CountryField
 
+#Internal Imports
 from products.models import Product
 from profiles.models import UserProfile
 
