@@ -1,11 +1,9 @@
-# Imports
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# 3rd party:
+# External Imports
+
 from django.contrib import admin
 
-# Internal:
+# Internal Imports
 from .models import Favourites
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 class FavouritesAdmin(admin.ModelAdmin):

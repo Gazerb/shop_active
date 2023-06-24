@@ -7,7 +7,9 @@
     <div class="col"></div>
   </div>
 </div>
-{% endblock %} {% block content %}
+{% endblock %} 
+{% block content %}
+<!-- Shows users favourites -->
 <div class="overlay"></div>
     <div class="container-fluid px-3 favourites-page">
         <div class="row">
@@ -98,7 +100,9 @@
   {% endif %}
 </div>
 <hr />
-
-{% endblock %} {% block postloadjs %} {{ block.super }}
+{% endblock %} 
+<!-- Loads extra script for this page -->
+{% block postloadjs %} 
+{{ block.super }}
 <script src="{% static 'favourites/js/favourites.js' %}"></script>
 {% endblock %}

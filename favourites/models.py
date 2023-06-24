@@ -1,12 +1,9 @@
-# Imports
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# 3rd party:
+# External Imports
 from django.db import models
 from django.contrib.auth.models import User
 
-# Internal:
+# Internal Imports:
 from products.models import Product
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 class Favourites(models.Model):

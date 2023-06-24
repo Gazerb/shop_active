@@ -1,12 +1,9 @@
-# Imports
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# 3rd party:
+# External Imports
 from django.http import Http404
 from django.shortcuts import get_object_or_404
 
-# Internal:
+# Internal Imports
 from .models import Favourites
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 def wishlist_contents(request):
