@@ -2,9 +2,9 @@
 
 ## Code institute / City of Bristol College Milestone Project 4
 
+Shop Active is an online fitness store selling clothing for the gym and other activitites. It also sells accessories and equipment like machines and weights for a home gym. This is my fourth milestone project for the web development course at Code Institute/ City of Bristol College. For this project I had to build a full-stack site based around buisness logic used to control a centrally-owned dataset. It required an authentication mechanism and to provide paid access to the site data and/ or other activities based on the dataset, such as the purchase of a product or service.
 
-
-Click <a href="https://clitheroe-coach-mentor.herokuapp.com/">here</a> to view the live website.
+Click <a href="https://shop-active.herokuapp.com/">here</a> to view the live website.
 
 ## User Experince 
 In this section, I will be providing information on the UX process. Focusing on who the PeakMotion website is for, the main aims of this project and how the website helps to meet the users needs
