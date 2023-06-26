@@ -7,60 +7,64 @@ Shop Active is an online fitness store selling clothing for the gym and other ac
 Click <a href="https://shop-active.herokuapp.com/">here</a> to view the live website.
 
 ## User Experince 
-In this section, I will be providing information on the UX process. Focusing on who the PeakMotion website is for, the main aims of this project and how the website helps to meet the users needs
+In this section, I will be providing information on the UX process. Focusing on who the ShopActive website is for, the main aims of this project and how the website helps to meet the users needs.
 
 The Project Goals:
 <ul>
-    <li>Allow users to register an account</li>
-    <li>Enable users to make a booking </li>
-    <li>Alow users the ability to change a booking created</li>
-    <li>Provide information and the current club mentors</li>
+    <li>An online place for someone to find gymwear, gym accessories and gym equipment</li>
+    <li>Enable users to register an account </li>
+    <li>Enable users to add items to a shopping bag</li>
+    <li>Enable users to be able to complete an order of items</li>
 </ul>
 
 ## User stories
 
 A new user:
 <ul>
-    <li>Easy to sign up</li>
-    <li>Easy to make a booking</li>
-    <li>Easy to change a booking made</li>
+    <li>Easy to navigate the website and find items</li>
+    <li>Able to sign up/ register an account for the website</li>
+    <li>View details of each individual item</li>
+    <li>Easily identify clearance items and speacial offers</li>
+    <li>Search for a product via a specific category or word</li>
 </ul>
 
 #### Returning users
 
 Current user:
 <ul>
-    <li>Easy to make a booking</li>
-    <li>Easy to change a booking made</li>
+    <li>Easy to navigate the website and find items</li>
+    <li>Able to sign up/ register an account for the website</li>
+    <li>View details of each individual item</li>
+    <li>Easily identify clearance items and speacial offers</li>
+    <li>Search for a product via a specific category or word</li>
 </ul>
 
 Buisness Owner:
 <ul>
-    <li>Give users the ability to make bookings with the coach mentors</li>
-    <li>Show users contact details for the club and coach mentors</li>
-    <li>Provide other learning resources</li>
+    <li>Give users easy navigation to find products</li>
+    <li>Give users easy accessibility to special offers</li>
+    <li>Let users create an account with the website</li>
+    <li>An easy and simple checkout process</li>
 </ul>
 
 
 ## User Centered Design
 ### 1. Strategy Plane
-The User Centered Design process started with the creation of the user stories and these influenced the design and layout of the product.
+The User Centered Design process started with looking at the project goals and creating the user stories. These influenced the design and layout of the project.
 
 
 ### 2. Scope Plane
-A system so the club can allow its new coaches to book time with one of the experienced coach metors to help them with any issues or just to improve them as coaches.
+An online e-commerce store for ShopActive. A company selling gymwear, gym accessories and home gym equipemnt.
 
 
 ### 3. Structure Plane
-After idenifying the needs of the business owner and users that will use the new system the below was identified as required:
+After idenifying the needs of the business owner and users that will access the website the below was identified as required:
 <ul>
-    <li>Blue and White colour scheme to match the clubs current colours</li>
-    <li>Club contact details/li>
-    <li>Current club mentors</li>
-    <li>Booking form</li>
-    <li>User bookings page</li>
-    <li>Clear layout</li>
-    <li>easy navigation for the user</li>
+    <li>Blue and White colour scheme to match the buisness colours</li>
+    <li>Same layout throughout the site</li>
+    <li>Wasy and clear navigation for the user</li>
+    <li>User register, login and logout easy to find</li>
+    <li>Fully working checkout</li>
 </ul>
 
 
@@ -69,19 +73,19 @@ To create the wireframes for the product I used <a href="https://www.figma.com/>
 
 We have a header containing the logo and nav bar.
 
-To help the website with responsiveness of devices it was decided that when viewed on a mobile that the nav bar would be in a drop down hamberger menu.
+The mobile version is slightly different to help with device responsiveness.
 
-A footer is also included which contains the contact details of the club and links to other resources.
+A footer is also included which will include links for the website, as well as the social netowkr links.
 
 #### Wireframes
 Desktop:
 <ul>
-    <li><a href="documentation/wireframe/Desktop-Home-page.png">Index Page</a></li>
-    <li><a href="documentation/wireframe/Desktop-Log-In.png">Log In Page</a></li>
-    <li><a href="documentation/wireframe/Desktop-Make-a-Booking.png">Make a Booking Page</a></li>
-    <li><a href="documentation/wireframe/Desktop-Mentors.png">Mentors Page</a></li>
-    <li><a href="documentation/wireframe/Desktop-User-bookings.png">User Bookings page</a></li>
-    <li><a href="documentation/wireframe/Desktop-User-Profile.png">User Profile Page</a></li>
+    <li><a href="documentation/wireframe/Desktop-index.png">Index Page</a></li>
+    <li><a href="documentation/wireframe/Desktop-products.png">Products Page</a></li>
+    <li><a href="documentation/wireframe/Desktop-product-detail.png">Product Detail Page</a></li>
+    <li><a href="documentation/wireframe/Desktop-bag.png">Bag Page</a></li>
+    <li><a href="documentation/wireframe/Desktop-profile.png">Profile page</a></li>
+    <li><a href="documentation/wireframe/Desktop-product-management.png">Product Management Page</a></li>
 </ul>
 
 
