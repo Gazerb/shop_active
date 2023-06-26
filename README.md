@@ -91,23 +91,23 @@ Desktop:
 
 Tablet:
 <ul>
-    <li><a href="documentation/wireframe/Tablet-Home-Page.png">Index Page</a></li>
-    <li><a href="documentation/wireframe/Tablet-Log-In-page.png">Log In Page</a></li>
-    <li><a href="documentation/wireframe/Tablet-Make-a-Booking.png">Make a Booking Page</a></li>
-    <li><a href="documentation/wireframe/Tablet-Mentors.png">Mentors Page</a></li>
-    <li><a href="documentation/wireframe/Tablet-Profile.png">User Profile Page</a></li>
-    <li><a href="documentation/wireframe/Tablet-user-bookings-page.png">User Bookings Page</a></li>
+    <li><a href="documentation/wireframe/tablet-index.png">Index Page</a></li>
+    <li><a href="documentation/wireframe/tablet-products.png">Products Page</a></li>
+    <li><a href="documentation/wireframe/tablet-product-detail.png">Product Detail Page</a></li>
+    <li><a href="documentation/wireframe/tablet-bag.png">Bag Page</a></li>
+    <li><a href="documentation/wireframe/tablet-profile.png">User Profile Page</a></li>
+    <li><a href="documentation/wireframe/tablet-product-management.png">Product Management Page</a></li>
 </ul>
 
 
 Mobile:
 <ul>
-    <li><a href="documentation/wireframe/Phone-home.png">Index Page</a></li>
-    <li><a href="documentation/wireframe/Phone-log-In.png">Log In Page</a></li>
-    <li><a href="documentation/wireframe/Phone-Make-a-Booking.png">Make a Booking Page</a></li>
-    <li><a href="documentation/wireframe/Phone-mentors-page.png">Mentors Page</a></li>
-    <li><a href="documentation/wireframe/Phone-User-bookings-Page.png">User Bookings Page</a></li>
-    <li><a href="documentation/wireframe/Phone-User-Profile-Page.png">User Profile Page</a></li>
+    <li><a href="documentation/wireframe/Phone-index.png">Index Page</a></li>
+    <li><a href="documentation/wireframe/Phone-products.png">Products Page</a></li>
+    <li><a href="documentation/wireframe/Phone-product-detail.png">Product Detail Page</a></li>
+    <li><a href="documentation/wireframe/Phone-bag.png">Bag Page</a></li>
+    <li><a href="documentation/wireframe/Phone-profile.png">User Profile Page</a></li>
+    <li><a href="documentation/wireframe/Phone-product-management.png">Product Management Page</a></li>
 </ul>
 
 
@@ -116,7 +116,7 @@ Mobile:
 Due to the modern society of users now looking for information on mobile phones and tablet this was created with a mobile-first approach.
 
 #### Colour Scheme
-The colour scheme was chosen to be simple, clean, bright and visually appealing. Blue is the chosen as this is the primary colour of the club. There will be slight variations of the blue throught the system. Some ares will also contain white as this is the second colour of the clubs main two colours.
+The colour scheme was chosen to be simple, clean, bright and visually appealing. Blue is the chosen as this is the primary colour as this is the colour of the buisness. There will be slight variations of the blue throught the system. Some ares will also contain white as this is the second colour of the clubs main two colours.
 <img src="documentation/readme-images/colour.png" height="auto" width="100%" alt="Image of colour palette showing colours used in website" />
 
 <sub>*Colour palette created at* [coolors.co](https://coolors.co/7ae9f0-04c6d3-fafafa-0420d4-000000).</sub>
