@@ -364,3 +364,5 @@ The products were taken from the below websites:
 </ul>
 
 Boostrap has been heavily used throughtout this project. 
+
+I aslo used Code Institute Slack and Stack Overflow for help with any errors on this.
