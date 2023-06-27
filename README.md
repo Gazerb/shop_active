@@ -138,7 +138,7 @@ During the development of this project it was decided that two new features were
 
 
 ### Database Struture
-<img src="documentation/readme-images/shopacitve-data-structure.png" height="auto" width="100%" alt="Image dtabase structure" />
+<img src="documentation/readme-images/shopactive-data-structure.png" height="auto" width="100%" alt="Image database structure" />
 
 
 ## Features
@@ -172,7 +172,7 @@ The below languages were used in this project:
     <li>CSS</li>
     <li>JavaScript</li>
     <li>Python</li>
-    <li>JQuery - imported from Materialize script</li>
+    <li>JQuery - imported from Boostrap and stripe</li>
     <li>SQLite</li>
     <li>Django</li>
     <li>Postgres</li>
