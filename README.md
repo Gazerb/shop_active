@@ -323,7 +323,7 @@ We have also met the buisness owners requirement of:
 </ul>
 
 ## Bugs
-I had a few bugs with this project throughout. The first was not showing the email and order amounts when an order was completed. I rebuilt the database with ElephantSQL as it was workin on the local database. This resolved that issue.
+I had a few bugs with this project throughout. The first was not showing the email and order amounts when an order was completed. I rebuilt the database with ElephantSQL as it was working on the local database. This resolved that issue.
 
 Second issue was with the footers on all pages, it wasn't filling the bottom of the page or was showing in the middle of the page covering the products and forms. It turns out i had some closing tags missing in the HTML and this resolved that issue.
 
