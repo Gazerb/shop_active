@@ -117,45 +117,52 @@ Due to the modern society of users now looking for information on mobile phones 
 
 #### Colour Scheme
 The colour scheme was chosen to be simple, clean, bright and visually appealing. Blue is the chosen as this is the primary colour as this is the colour of the buisness. There will be slight variations of the blue throught the system. White has been chosen as the background colour to help the chosen colours stand out.
-<img src="documentation/readme-images/colour.png" height="auto" width="100%" alt="Image of colour palette showing colours used in website" />
+<img src="documentation/readme-images/shop-acitve-colours.png" height="auto" width="100%" alt="Image of colour palette showing colours used in website" />
 
 <sub>*Colour palette created at* [coolors.co](https://coolors.co/7ae9f0-04c6d3-fafafa-0420d4-000000).</sub>
 
 <ul>
-    <li>Boostrap primary was chosen for the navigation bar and footer as its the blue chosen by the buisness</li>
-    <li>#E3F2FD. Chosen as the background for the form areas</li>
+    <li>#0275d8. This was chosen for the navigation bar and footer as its the blue chosen by the buisness. This colour was included with Boostrap</li>
+    <li>#5CB85C. This has been used in the success message and is included with Boostrap</li>
+    <li>#FAFAFA. Used as background where there is no background image and also for some of the text and maouse hover</li>
+    <li>#F0AD4E. Used for messages that give the user a warning. Incorperated from Boostrap</li>
+    <li>#000000. Used for the text.</li>
+    <li>#d9534f. Used for the failed massages. Red colour incorperated from Boostrap.</li>
 </ul>
 
 #### Icons
 Icons were used alongside to help the user understand sections of the website at a glance. I have taken the icons used in this project from Font Awesome (https://fontawesome.com/).
 
 ## Development
-I was advised by my mentor to change the buttons to have one on each side of the page cards rather then right next to each other to improve UX. I was also advised to add icons to the buttons to improve the clearness of the website and buttons.
+During the development of this project it was decided that two new features were to be added. This included a review section for each product and a favourites list for the user to favourite products to help them find them at a later date.
+
+
+### Database Struture
+<img src="documentation/readme-images/shopacitve-data-structure.png" height="auto" width="100%" alt="Image dtabase structure" />
 
 
 ## Features
 ### Consistent features on all pages
 <ul>
     <li>Header, contains the same company logo and navigation bar</li>
-    <li>Footer, Contains company contact number, email and social links</li>
+    <li>Footer, Contains social media links and links for the website with a company description also in there. It also has a newsletter sign up section.</li>
 </ul>
 
 ### Other features
 <ul>
     <li>Ability for the user to create an account</li>
     <li>User can log in and out of their account</li>
-    <li>User can make, edit and cancel bookings</li>
-    <li>User can also delete their account</li>
+    <li>Users can add products to a bag and favourites list</li>
+    <li>Users can delete products from their bag or favourites</li>
+    <li>Logged in users can also review a product and delete that review</li>
 </ul>
 
 ## Future Features
 <ul>
-    <li>Allow the mentors to set availabilty that can be booked</li>
-    <li>Add an area where managers can share sessions and other resources</li>
-    <li>Add feature so once booking is made then the mentors get an email of this booking with contact details</li>
-    <li>Reviews area for the coaches to review their mentors</li>
-    <li>User to receive email confirming booking</li>
-    <li>Hero image of a coaching session being delivered added to the index page</li>
+    <li>Allow users to edit their review</li>
+    <li>Edit the clearance page to show the price before and the current clearance price</li>
+    <li>Add pop up modals so the user can delete anything with an accidental click</li>
+    <li>Add a contact us page incase of any order issues</li>
 </ul>
 
 ## Technologies used
@@ -163,12 +170,15 @@ The below languages were used in this project:
 <ul>
     <li>HTML</li>
     <li>CSS</li>
-    <li>JavaScript - Imported from Materialize script</li>
+    <li>JavaScript</li>
     <li>Python</li>
     <li>JQuery - imported from Materialize script</li>
-    <li>MongoDB</li>
-    <li>Flask</li>
-    <li>Jinja</li>
+    <li>SQLite</li>
+    <li>Django</li>
+    <li>Postgres</li>
+    <li>Google Emails</li>
+    <li>Stripe</li>
+    <li>Amazon Web Services</li>
 </ul>
 
 ## websites used
@@ -202,6 +212,15 @@ No error where found in the CSS code when that went through the validator.
 
 
 ## Manual Testing
+There are two types of users for this website:
+<ul>
+    <li>An admin(administrator) user account</li>
+    <li>A regular user account</li>
+    <li>When making a payment as a regular user, a test credit card of 4242424242424242 has been set up for the card number</li>
+    <li>For the expiry date, cvc and postal code any series number(s) can be used(once they meet the mimimum values)</li>
+    <li>I also tested the uk card number to ensure it asks for a UK postcode and not a zip code. This card number is 4000008260000000</li>
+</ul>
+
 The website was tested on the following browsers:
 <ul>
     <li>Google Chrome - Version 106.0.5249.91</li>
@@ -217,9 +236,11 @@ All browsers where tested fully and the website behaved as expected on them. I t
     <li>That the user can log in and out</li>
     <li>That if the wrong password is entered the user is told and can try again</li>
     <li>That the user can register</li>
-    <li>That the user can added, edit and cancel bookings</li>
-    <li>That the user can delete their account</li>
-    <li>That the user can edit their profile</li>
+    <li>That the user can add, edit and delete items from their bag</li>
+    <li>That the user can add and delete items from their favourites</li>
+    <li>That the user can edit default address details in their profile</li>
+    <li>That an admin user can add, delete and edit a product</li>
+    <li>That an admin user can access the admin portal</li>
 </ul>
 
 ## Device & responsiveness testing
@@ -248,47 +269,63 @@ It was also tested on the below laptop and desktop sizes:
 Below I will discuss how the project met the requirements of the user stories from earlier.
 
 #### New User
-So for a new user of this booking system they needed to be able to complete below:
+So for a new user of this website they needed to be able to complete below:
 <ul>
     <li>sign up</li>
-    <li>make a booking</li>
-    <li>change a booking made</li>
+    <li>Search for an item</li>
+    <li>Add an item to bag</li>
+    <li>Delete an item from the bag</li>
+    <li>Update an item in the bag</li>
+    <li>Complete an order with checkout system</li>
 </ul>
 
 After testing this is proven to work for the new user.
 
-<img src="documentation/readme-images/new-user-1.png" height="auto" width="100%" alt="image showing nav bar pages where the new user requirements can be met" />
-<img src="documentation/readme-images/new-user-2.png" height="auto" width="100%" alt="image showing nav bar pages where the new user requirements can be met" />
+User can sign up to the website by clicking account then register or clicking register in the footer:
+
+<img src="documentation/readme-images/signup.png" height="auto" width="100%" alt="image showing sign up option 1" />
+<img src="documentation/readme-images/footer-signup.png" height="auto" width="100%" alt="image showing sign up option 2" />
+
+A user can search for an item via the search bar or the nav bar:
+<img src="documentation/readme-images/search-bar.png" height="auto" width="100%" alt="image showing search bar option" />
+<img src="documentation/readme-images/navbar.png" height="auto" width="100%" alt="image showing nav bar" />
+
+A User can add items to the bag from the product details page:
+<img src="documentation/readme-images/product-details.png" height="auto" width="100%" alt="image showing product details page with add a bag button" />
+
+A User can delete and update an item in the bag by clicking either update or remove:
+<img src="documentation/readme-images/update-remove.png" height="auto" width="100%" alt="image showing options for updating and removing item from bag" />
+
+A user can complete a fully checkout by first secure checkout in the bag, filling out the billing details, clicking complete order and waiting for the confirmation page:
+<img src="documentation/readme-images/secure-checkout-button.png" height="auto" width="100%" alt="image showing secure checkout button" />
+<img src="documentation/readme-images/billing-details.png" height="auto" width="100%" alt="image showing billing details form" />
+<img src="documentation/readme-images/order-complete.png" height="auto" width="100%" alt="image showing order complete" />
+
 
 
 The above also met the requirements of a current/ returning user:
 <ul>
-    <li>Make a booking</li>
-    <li>Change a booking made</li>
-    <li>Cancel a booking</li>
+    <li>Login</li>
+    <li>Search for an item</li>
+    <li>Add an item to bag</li>
+    <li>Delete an item from the bag</li>
+    <li>Update an item in the bag</li>
+    <li>Complete an order with checkout system</li>
 </ul>
 
 
 We have also met the buisness owners requirement of:
-Buisness Owner:
 <ul>
-    <li>Give users the ability to make bookings with the coach mentors</li>
-    <li>Show users contact details for the club and coach mentors</li>
-    <li>Provide other learning resources</li>
+    <li>Give users easy navigation to find products</li>
+    <li>Give users easy accessibility to special offers</li>
+    <li>Let users create an account with the website</li>
+    <li>An easy and simple checkout process</li>
 </ul>
 
-We already know from testing that users can make bookings with mentors. To meet the other requirement each booking the user makes they have to enter their contact details and the reason for their booking to assist them mentors. We have also provided other learning resouces on the links in the footer on every page.
-
-<img src="documentation/readme-images/buisness-1.png" height="auto" width="100%" alt="image showing booking form" />
-<img src="documentation/readme-images/buisness-2.png" height="auto" width="100%" alt="image showing other resouce links" />
-
 ## Bugs
-I had a few bugs with this project throughout. The first was that my website would not connect to my Mongdb, this was due to an incorrect path to the mongodb.
+I had a few bugs with this project throughout. The first was not showing the email and order amounts when an order was completed. I rebuilt the database with ElephantSQL as it was workin on the local database. This resolved that issue.
 
-Second was issues with showing users current bookings. This was resolved by inputting the correct code on all pages it was required and calling the booking ID when the show bookings page loaded.
-
-
-Third, I was having issues where when the account was deleted the user still had a session. This was resolved by added in session pop in the app.py.
+Second issue was with the footers on all pages, it wasn't filling the bottom of the page or was showing in the middle of the page covering the products and forms. It turns out i had some closing tags missing in the HTML and this resolved that issue.
 
 
 ### Deployment to Heroku
@@ -297,11 +334,16 @@ Third, I was having issues where when the account was deleted the user still had
 2. Set the environment variables in Settings > Reveal Config Variables
 3. The following Variables must be set 
 ```
-MONGO_URI = mongodb+srv://<INSERT USERNAME>:<INSERT PASSWORD>@<INSERT CLUSTERNAME>.zbpbq.mongodb.net/<INSERT COLLECTION NAME>?retryWrites=true&w=majority
-MONGO_DBNAME = <INSERT YOUR COLLECTION NAME>
+AWS_ACCESS_KEY_ID = <INSERT YOUR AWS ACCESS KEY>
+AWS_SECRET_ACCESS_KEY = <INSERT YOUR AWS SECRET ACCESS KEY>
+DATABASE_URL = <INSERT DATABASE URL>
+EMAIL_HOST_PASS = <INSERT EMAIL HOST PASS>
+EMAIL_HOST_USER = <INSERT HOST EMAIL>
 SECRET_KEY = <INSERT YOUR SECRET KEY>
-IP = 0.0.0.0
-PORT = 5000
+STRIPE_PUBLIC_KEY = <INSERT STRIPE PUBLIC KEY>
+STRIPE_SECRET_KEY = <INSERT STRIPE SECRET KEY>
+STRIPE_WH_SECRET = <INSERT STRIPE WEBHOOK SECRET KEY>
+USE_AWS = True
 ```
 4. Create requirements.txt from your project with the help of ```pip3 freeze --local > requirements.txt ```
 5. Create a Procfile ```echo web: python app.py > Procfile``` 
@@ -312,6 +354,13 @@ PORT = 5000
 
 
 ## Credits
-In this project of lot of my early code was used with the help of the Code institute Flask taskmanager app walkthrough. I then added code to suite this project.
+In this project a lot of the structure was taken from the Boutique Ado walkthrough from Code Institute and edited to suit the needs of this project.
 
-I have also used materialize throught the project for the nav bar and mobile nav bar, layout, colours, forms and buttons.
+The products were taken from the below websites:
+<ul>
+    <li>https://www.fitness-superstore.co.uk/</li>
+    <li>https://www.mandmdirect.com/</li>
+    <li>https://www.amazon.co.uk/</li>
+</ul>
+
+Boostrap has been heavily used throughtout this project. 
