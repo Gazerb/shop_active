@@ -13,6 +13,7 @@ body {
     font-family: 'Comfortaa', cursive;
     max-width: 100%;
     overflow-x: hidden;
+    display: flex;
 }
 
 .shop-now-padding {
