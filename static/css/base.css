@@ -52,6 +52,11 @@ body {
     padding: 0%;
     margin: 0%;
 }
+
+.footer p {  /* Selects text inside a <p> tag that is inside a .footer <div> */
+   margin-bottom: 0; /* removes default <p> tag margin from the bottom */
+}
+
 .green-btn {
     background-color: #1E5128;
     color: white;
