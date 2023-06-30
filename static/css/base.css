@@ -51,6 +51,7 @@ body {
 .footer {
     padding: 0%;
     margin: 0%;
+    position: absolute;
 }
 
 .footer p {  /* Selects text inside a <p> tag that is inside a .footer <div> */
